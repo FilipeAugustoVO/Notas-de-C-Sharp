@@ -84,6 +84,7 @@ Toolbox:
 				 	 http://www.macoratti.net/11/01/c_cbo1.htm	
 				 	 https://www.dotnetperls.com/combobox
 				 	 https://stackoverflow.com/questions/11167861/combo-box-if-statement
+					 https://stackoverflow.com/questions/10539528/what-does-each-combobox-selected-return (o que ComboBoxes retornam)
 
 		Textbox: Cria uma caixa de texto que permite ao usuário inserir texto, e provêm edição multi-linha e mascaração de texto de senha.
 
