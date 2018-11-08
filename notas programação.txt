@@ -78,4 +78,6 @@ frmVisualizadorImagens:
 7. Desabilitar botão Mostrar Imagem, caso não tenha imagem.
 
 
-Como fazer a
+Sobre erro de "Variable is assigned but its Value is never used":
+https://weblog.west-wind.com/posts/2009/Feb/28/Variable-is-assigned-but-its-Value-is-never-used-Warning
+https://forum.unity.com/threads/solved-unnecessary-the-variable-is-assigned-but-its-value-is-never-used.360004/
