@@ -287,6 +287,8 @@ Tipos de data/Data Types pra C#:
 		Leituras úteis:
 		https://www.programiz.com/csharp-programming/variables-primitive-data-types
 		http://www.macoratti.net/12/12/c_num1.htm
+
+
 	
 
 Métodos: Determina o comportamento dos objetos de uma classe.
@@ -438,4 +440,39 @@ Métodos: Determina o comportamento dos objetos de uma classe.
 
 	ToString: Metodo virtual. Retorna uma representação de string. É um metodo	
 
+Modificador de Acesso: Palavras-chave usadas para especificar a acessibilidade declarada de um membro ou de um tipo. Existem quatro modificadores de acesso:
 
+	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/access-modifiers
+
+
+	1. public:
+
+	2. Protected
+
+	3. internal:
+
+	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/internal
+
+	4. private:
+
+
+	Existem seis niveis de acessibilidade que podem ser especificados usando os modificadores de acesso:
+	
+
+    public: o acesso não é restrito.
+
+    protected: o acesso é limitado à classe que os contém ou aos tipos derivados da classe que os contém.
+
+    internal: o acesso é limitado ao assembly atual.
+
+    protected internal: o acesso é limitado ao assembly atual ou aos tipos derivados da classe que os contém.
+
+    private: o acesso é limitado ao tipo recipiente.
+
+    private protected: o acesso é limitado à classe que o contém ou a tipos derivados da classe que o contém no assembly atual.
+
+Instruções:
+
+	return: Finaliza a execução do método em que aparece e retorna o controle para o método de chamada. Pode retornar um valor opcional. Se o metodo for do tipo void, a instrução return pode ser omitida.
+
+	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/return
