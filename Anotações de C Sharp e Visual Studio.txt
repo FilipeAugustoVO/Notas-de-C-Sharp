@@ -104,7 +104,7 @@ Containers:
 Propriedades:
 
 
-	AppendText: Exibe todo o conteúdo desejado simultaneamente.
+	.AppendText: Exibe todo o conteúdo desejado simultaneamente.
 
 	Background Color: Altera cor do pano de fundo do aplicativo.
 
@@ -205,7 +205,8 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 	Instância/instance (OOP): Ocorrência concreta de um objeto. Formalmente sinônimo com objeto. Instanciação é a criação de uma Instância.
 
-	Herança de Classes: Capacidade de sub-classes de herdarem os objetos de suas classes-pai.
+	Herança de Classes: Capacidade de sub-classes de herdarem os objetos de suas classes-pai.:
+		https://stackoverflow.com/questions/4245816/how-to-create-a-subclass-in-c
 
 	Encapsulamento: Separação de códigos. Deixamos a variável privada e utilizar metodos para acessa-la, deixando-a mais isolada possivel do usuário. Ou seja, encapsular significa ocultar informações, definindo que cada objeto, contém todos os detalhes de implementação necessários sobre como ele funciona e oculta os detalhes internos sobre como ele executa os serviços.	
 
