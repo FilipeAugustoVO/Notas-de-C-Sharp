@@ -212,6 +212,53 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 	Propriedades Autoimplementadas: Possibilitam a redução da quantidade de código necessário no momento de inplementar atributos e propriedades à uma classe.
 
+		http://www.linhadecodigo.com.br/artigo/1420/csharp-30-auto-implemented-properties.aspx
+
+		https://www.javatpoint.com/csharp-auto-implemented-properties
+
+		Exemplo de programa de console com propriedades AutoImplementadas:
+		
+		using System;
+
+				namespace PropriedadesAutoImplementadas2
+				{
+				    public class Movie
+				    {
+				        public string Titulo { get; set; }
+
+				        public string Genero { get; set; }
+
+					        public override string ToString()
+					        {
+					            return Titulo + "\t" + Genero;
+					        }
+
+				    }
+
+
+
+				    class Program
+				    {
+				        static void Main(string[] args)
+
+				        {
+
+				            Movie m = new Movie();
+
+				            m.Titulo = "Em busca da felicidade";
+
+				            m.Genero = "Drama";
+
+				            Console.WriteLine(m);
+
+				            Console.ReadLine();
+
+				        }
+
+				    }
+
+				}
+
 MessageBox: Exibe uma janela de mensagem, também conhecida como caixa de dialogo, que exibe uma mensagem ao usuário. Mais info em: https://docs.microsoft.com/pt-br/dotnet/api/system.windows.forms.messagebox?redirectedfrom=MSDN&view=netframework-4.7.2
 
 	E também: https://www.dotnetperls.com/messagebox-show
