@@ -1,5 +1,9 @@
 Visual Studio Anotações:
 
+Indice:
+
+
+
 Notas importantes:
 
 - Forms/Formas são Classes!
@@ -215,6 +219,8 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 		http://www.linhadecodigo.com.br/artigo/1420/csharp-30-auto-implemented-properties.aspx
 
 		https://www.javatpoint.com/csharp-auto-implemented-properties
+
+		http://www.linhadecodigo.com.br/artigo/1716/csharp-30-novidades-parte-1-propriedades-automaticas-automatic-properties.aspx
 
 		Exemplo de programa de console com propriedades AutoImplementadas:
 		
@@ -486,7 +492,10 @@ Métodos: Determina o comportamento dos objetos de uma classe.
 
 			Leitura recomendada: https://www.dotnetperls.com/for
 
-	ToString: Metodo virtual. Retorna uma representação de string. É um metodo	
+		
+
+		ToString: Metodo virtual. Retorna uma representação de string. É um metodo que retorna uma cadeia de caracteres desse objeto.
+			https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method
 
 Modificador de Acesso: Palavras-chave usadas para especificar a acessibilidade declarada de um membro ou de um tipo. Existem quatro modificadores de acesso:
 
@@ -524,3 +533,10 @@ Instruções:
 	return: Finaliza a execução do método em que aparece e retorna o controle para o método de chamada. Pode retornar um valor opcional. Se o metodo for do tipo void, a instrução return pode ser omitida.
 
 	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/return
+
+Palavras-Chave:
+
+	Override: Palavra-chave que significa que iremos sobrescrever um método/evento/propriedade. Todos que possuirem a keyword "virtual" são passiveis de override.	
+
+Programação Orientada a Objetos (OOP):
+	https://ericlemes.com/2009/03/03/dotnet-oop/	
