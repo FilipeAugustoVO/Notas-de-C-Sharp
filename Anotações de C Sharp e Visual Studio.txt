@@ -29,6 +29,12 @@ Sequências e caracteres de escape: Combinação de caracteres, que consiste num
 		Por exemplo, WCHAR f = L'\x4e00' ou WCHAR b[] = L"The Chinese character for one is \x4e00".
 		
 
+Eventos:		
+	FormClosed: Carrega um evento ao fechar o Formulário.
+		ex:
+
+		
+
 
 Toolbox:
 
@@ -94,9 +100,11 @@ Toolbox:
 
 			Propriedades:
 
-				Borderstyle: Altera o estilo da borda ao redor da Textbox.
+				.Borderstyle: Altera o estilo da borda ao redor da Textbox.
 
-				Multiline: Controla se o texto no controle de edição pode ser extendido em mais de uma linha. Em outra palavras, ele permite que uma textbox ou um controle semelhante pode usar mais de uma linha. Tanto que ele abre a possibilidade de expandir o tamanho de um Textbox na vertical.
+				.ReadOnly: Torna a TextBox somente leitura, ou seja, não podemos escrever nada nela. Parâmetros: True/False.
+
+				.Multiline: Controla se o texto no controle de edição pode ser extendido em mais de uma linha. Em outra palavras, ele permite que uma textbox ou um controle semelhante pode usar mais de uma linha. Tanto que ele abre a possibilidade de expandir o tamanho de um Textbox na vertical.
 				True: Permite que insiramos várias linhas. False: Apenas uma linha.	 	 	
 
 
