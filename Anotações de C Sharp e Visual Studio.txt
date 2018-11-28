@@ -18,6 +18,8 @@ Eventos:
 	FormClosed: Carrega um evento ao fechar o Formulário.
 		ex:
 
+	btn_click	
+
 		
 
 
@@ -206,6 +208,20 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 		Metodos Abstratos:
 
+	String: A classe string definida na Biblioteca .NET representa texto como uma série de caracteres Unicode. A classe string provem metodos e propriedades para trabalhar com string. A classe string tem metodos para clonar string, comparar strings, concatenar e copiar strings. Ela também provem métodos para encontrar uma substring numa string, encontrar o index de um caractere ou substring, substituir caracteres, dividr string, aparar string, e adicionar padding á string.
+		A classe string também provem métodos para converter os caracteres de uma string para letra maiuscula (uppercase) ou minuscula (lowercase).
+
+	https://www.c-sharpcorner.com/article/string-in-C-Sharp/
+	
+		Metodos de String:
+			- String.Remove: Retorna uma nova string na qual um numero especificado de caracteres da string atual é deletado.
+				ex:
+			    public string Remove (int startIndex);
+
+
+			https://docs.microsoft.com/pt-br/dotnet/api/system.string.remove?view=netframework-4.7.2
+
+		Propriedades de String:		
 
 
 	Encapsulamento: Separação de códigos. Deixamos a variável privada e utilizar metodos para acessa-la, deixando-a mais isolada possivel do usuário. Ou seja, encapsular significa ocultar informações, definindo que cada objeto, contém todos os detalhes de implementação necessários sobre como ele funciona e oculta os detalhes internos sobre como ele executa os serviços.	
@@ -557,11 +573,92 @@ Modificador de Acesso: Palavras-chave usadas para especificar a acessibilidade d
 
     private protected: o acesso é limitado à classe que o contém ou a tipos derivados da classe que o contém no assembly atual.
 
-Instruções:
+Instruções: As ações que um programa toma são expressadas em instruções. Ações comuns incluem declarar variáveis, escolher valores, chamar métodos, fazer laços por coleções, e indo de um bloco até o outro do código, dependendo da instrução. A ordem na qual as instruções são executadas em um programa é chamada de flxuo de controle ou fluxo de execução. O fluxo de controle pode variar cada vez que o programa é executado, dependendo de como o programa reage ao input que recebe no tempo de inicialização.
+
+	Uma instrução pode consistir de uma linha de código que termina em ponto e virgula (;), ou uma série de afirmações de uma linha em um bloco. Um bloco de instrução é enclausurado por chaves { } e pode conter blocos aninhados. 
+
+	https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements
+
+	Tipos de Instrução:
+
+		Instrução de Declaração: Introduz uma nova variável ou constante. Uma declaração variável pode opcionalmente atribuir um valor á variável. Em uma declaração constante, a atribuição é necessária.
+
+		Instrução de Expressão: Instruções de Expressão que calcula um valor devem guardar um valor em uma variável.
+
+		Instrução de Seleção: Instruções de Seleção permitem ramificar para seções diferentes do código, dependendo de uma ou mais condições especificadas. 
+
+			- if:
+
+			- else:
+
+			- switch:
+
+			https://www.dotnetperls.com/switch
+			https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/switch
+			https://www.c-sharpcorner.com/article/string-in-C-Sharp/
+
+			- case:
+
+		Instrução de Iteração: Permitem fazer um laço por coleções como arrays, ou performar o mesmo conjunto de instruções até que uma condição especifica seja encontrada.
+
+			- do:
+
+			- for:
+
+			- foreach:
+
+			- while:
+
+
+		Instrução de Salto: Instruções de Salto transferem controle para outra seção do código.
+
+			- break:
+
+			- continue:
+
+			- default:
+
+			- yield:
+
+
+		Instrução de Manipulação de Excessão: Instruções de manipulação de excessão permitem graciosamente recuperar-se de condições excepcionais em tempo de execução.
+
+			- throw:
+
+			- try-catch:
+
+			- try-finally:
+
+			- try-catch-finally:
+
+		Verificado e não-verificado(Checked e unchecked): Permitem especificar se operações numéricas são permitidas causar overflow quem o resultado é guardado numa variável que é muito pequena para guardar o valor resultante.
+
+			- checked:
+
+			- unchecked:
+
+		A instrução await: Se você marcar o método com o modificador async, você pode usar o operador await no método. Quando controle chega numa expressão await no metodo async, control retorna o chamador, e progresso no método é suspenso até que a tarefa esperada complete. Quando a tarefa está completa, execução pode resumir no método.
+
+		A instrução yield return: Um iterador performa uma iteração customizada sobre uma coleção, como uma lista ou array. Um iterador usa a instrução yield return para retornar cada elemento, um de cada vez. Quando a instrução yield return é alcançada, a localização atual no código é lembrada. Execução é reiniciada dessa localização quando o iterador é chamado da próxima vez.
+
+		A instrução fixed: Instrução fixed previne o coletor de lixo de relocar uma variável movivel.
+
+			- fixed:
+
+		A instrução lock: Permite limitar acesso á blocos de código para uma thread de cada vez.
+
+			- lock
+
+		Instrução labelada: Você pode dar uma label á instrução e usa a palavra-chave goto para pular para a instrução labelada.
+
+		A instrução vazia(empty): Consiste de um unico ponto e virgula (;). Ela não faz nada e pode ser usado em lugares onde uma instrução é necessária mas nenhuma ação precisa ser feita.
+
 
 	return: Finaliza a execução do método em que aparece e retorna o controle para o método de chamada. Pode retornar um valor opcional. Se o metodo for do tipo void, a instrução return pode ser omitida.
 
 	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/return
+
+	
 
 Palavras-Chave:
 
