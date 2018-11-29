@@ -12,13 +12,39 @@ Notas importantes:
 
 
 
-		
+Delegates: Um delegate é um tipo de referência que pode ser usado para encapsular um metodo nomeado ou anonimo. São similar em função aos pointers de C++; porém, são type-safe e seguros. São a base dos Eventos (ver abaixo). Pode ser instanciado associando-o com um metodo nomeado ou anonimo. Deve ser instanciado com um metodo ou expressão lamba (???) que tem um tipo compativo de retorno e parametros de input.
 
-Eventos:		
+	https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/delegate
+
+
+Eventos/events: Em termo geral, um evento é algo especial que vai acontecer. Em termos de C Sharp, são ações de usuário, como apertar botões, clicks, movimento de mouse, a ocorrência de notificações geradas pelo sistema, etc. Aplicações precisam responder á eventos quando eles ocorrem. Por exemplo, interrupts. Eventos são usados para comunicação inter-processo. Um evento é nada mais que um delegado encapsulado.
+	Um evento é compost por:
+
+	- editor/publisher: É a classe que envia (ou aciona) o evento. Determina quando o evento é realizado. É um objeto que contem a definição do evento e do delegado. Invoca o evento e este é notificado para os outros objetos.	
+	- assinantes/subscribers: São as classes que recebem (ou manipulam/handle) o evento. Is assinantes determinam a ação que é tomada em resposta ao evento.
+	- handlers/manipuladores:
+	- notificação/notification:
+
+	https://www.tutorialspoint.com/csharp/csharp_events.htm
+	https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/events/
+	http://www.tutorialsteacher.com/csharp/csharp-event
+
+	Eventos tem as seguintes propriedades:
+	* Um evento pode ter multiplos assinantes. Um assinante pode manipular/handle multiplos eventos de multiplos editores/publishers.
+	* Eventos sem assinantes nunca são erigidos.
+	* Eventos são tipicamente usados para assinalar ações de usuário como clicks de botão ou seleções de menu em interfaces gráficas de usuário.
+	* Quando um evento tem multiplos assinantes, os manipuladores de evento são invocados sincronicamente quando o evento é levantado. É possivel, porém, invocar eventos assincronos. Ver aqui: https://docs.microsoft.com/pt-br/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously
+	* Na biblioteca .NET Framework, eventos são baseados no delegado/delegate EventHandler e a classe base EventArgs.
+
+
+
+	Lista de eventos:
+
 	FormClosed: Carrega um evento ao fechar o Formulário.
 		ex:
 
 	btn_click	
+
 
 		
 
@@ -220,6 +246,7 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 
 			https://docs.microsoft.com/pt-br/dotnet/api/system.string.remove?view=netframework-4.7.2
+
 
 		Propriedades de String:		
 
@@ -591,7 +618,7 @@ Instruções: As ações que um programa toma são expressadas em instruções. 
 
 			- else:
 
-			- switch:
+			- switch: É uma instrução de seleção que escolhe uma única seção switch para ser executada de uma lista de candidatas com base em uma correspondência  de padrão com a expressão de correspondência. . A instrução switch é comumente usada como uma alternativa para um construto if-else se uma única expressão é testada contra três ou mais condições.
 
 			https://www.dotnetperls.com/switch
 			https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/switch
