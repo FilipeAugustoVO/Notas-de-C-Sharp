@@ -722,3 +722,42 @@ Sobrecarga de Metodos: https://www.devmedia.com.br/sobrecarga-de-metodos/4190
 
 Permite a redefinição de métodos usados no C# para utilização com tipos definidos pelo usuário. É um outro metodo, por assim dizer, de chamar um método. O C# permite que nós tenhamos vários métodos com o mesmo nome dentro de uma mesma classe, mas desde que estes métodos tenham diferentes conjuntos de parâmetros, sejam eles números, simplesmente a ordem dos parâmetros ou então tipos diferentes. O compilador trata um método sobrecarregado, quando este método for chamado, da seguinte maneira: primeiramente o compilador selecionará o método correto examinando o numero, em seguida os tipos e por fim a ordem dos argumentos da chamada.
 
+
+Variáveis em C Sharp: Variáveis nos permitem guardar dados de vários tipos, ex: strings de texto, numeros ou objetos customizados. Existem variáveis locais, que são acessiveis dentro do metodo na qual foram definidas, e tem os campos de classe, que podem ser acessados por todos os metodos da classe e até mesmo fora da classe, se a visibilidade permitir assim. Em C#, uma variável é declarada assim:
+	<data type> <name>;
+
+	Um exemplo pode parecer assim:
+	string name; (string é o tipo de dado, name é o nome da variável)
+
+	Essa é a versão mais básica, mas a variável ainda não tem um valor. Podemos atribuir um depois ou no mesmo tempo da declaração, como aqui:
+	<data type> <name> = <value>; 
+
+	Se esse variável não é local ao metodo com qual você está trabalhando atualmente (ex: variável de membro de classe), você talvez queira atribuir a visibilidade á variável:
+
+	<visibility> <data type> <name> = <value>;
+
+	E exemplo completo seria:
+
+	private string name = "John Doe"; onde private = visibilidade, string é o tipo de dado, e o nome é igual ao valor, que é "John Doe".
+
+	Visibilidade é relacionado á classes.
+
+	Material útil:
+		https://csharp.net-tutorials.com/basics/variables/
+
+
+	Variáveis Locais: Definidas e usadas dentro do mesmo metodo. No C#, uma variável definida dentro do mesmo método não pode ser usada fora do metodo - é por isso que ela é chamada de local.
+
+	https://www.dotnetperls.com/assign
+	https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables
+	https://www.techopedia.com/definition/20461/local-variable-c
+
+    Variáveis Globais: Se você for familiar com outras linguagens de programação, você deve conhecer Variáveis Globais, que são usaveis por mais localizações. C# não dá suporte para variáveis globais, que podem ser acessadas de mais lugares. Ao invês disso, podemos definir um campo em uma classe, que pode ser acessada por todos os metodos dessa classe.
+
+    O conceito de diferenciar onde a variavel foi declarada é chamado de scoping e previne o código de tornar-se uma grande bagunça de variáveis que podem ser alteradas de lugares demais. Outra tecnica que nos ajuda nisso é chamada de visibilidade de membro (private/public, etc)
+
+    https://stackoverflow.com/questions/14368129/c-sharp-global-variables
+    https://www.arclab.com/en/kb/csharp/global-variables-fields-functions-static-class.html
+    https://www.dotnetperls.com/global-variable
+    https://answers.unity.com/questions/575717/csharp-has-no-true-global-variable.html
+
