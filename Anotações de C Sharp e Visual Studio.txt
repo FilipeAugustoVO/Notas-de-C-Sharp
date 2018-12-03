@@ -229,10 +229,25 @@ Tipos:
 Classes: Estrutura que define um determinado conjunto de objetos que possuem características em comum. Uma classe descreve as ações que podem ser realizadas por seus objetos e quais informações eles poderão armazenar. Conceitos importantes:
 
 	Classe Abstrata: Uma classe herdada por outra classe, onde é posteriormente implementada e instânciada. Ela não pode ser instanciada, apenas herdada. Ela é conceitual, define funcionalidades para que as classes que herdarem-na possam implementar. Seria a "planta da casa", enquanto que a classe concreta é a cada em si. Ela pode ter métodos concretos ou abstratos. 
+	Caracteristicas:
+	1. Uma classe abstrata não pode suporter herança multipla.
+	2. Uma classe abstrata pode herdar de uma classe e de uma ou mais interfaces.
+	3. Uma classe abstrata pode implementar código com metodos não-abstratos.
+	4. Uma classe abstrata pode ter atributos para metodos, propriedades, etc. 
+	5. Uma classe abstrata pode ter constantes e campos.
+	6. Uma classe abstrata pode implementar uma propriedade.
+	7. Uma classe abstrata pode ter constructores ou destrutores.
+	8. Uma classe abstrata não pode ser herdada por estruturas.
+	9. Uma classe abstrata não pode suportar herança multipla.
+
+	Campo: Uma classe abstrata pode ter um campo de instância. As classes derivadas podem acessar esse campo pela palavra-chave base. Essa é a diferença crucial entre classes abstratas e inferfaces.
 	
+	https://www.dotnetperls.com/abstract
+	https://www.c-sharpcorner.com/UploadFile/annathurai/abstract-class-in-C-Sharp/
+
 		Se forem concretos os metodos, eles podem conter implementação dentro da classe abstrata e ao herda-la não é necessário a utilização deles. Porém, se elaborarmos métodos abstratos, estamos apenas dizendo que este existirá e teremos que implementa-lo na classe que herdar a classe abstrata.
 
-		Metodos Abstratos:
+		Metodos Abstratos: São metodos sem implementação. Quando criamos uma classe derivada de uma classe abstrata, nós devemos prover métodos override para todos os metodos abstratos na classe abstrata. 
 
 	String: A classe string definida na Biblioteca .NET representa texto como uma série de caracteres Unicode. A classe string provem metodos e propriedades para trabalhar com string. A classe string tem metodos para clonar string, comparar strings, concatenar e copiar strings. Ela também provem métodos para encontrar uma substring numa string, encontrar o index de um caractere ou substring, substituir caracteres, dividr string, aparar string, e adicionar padding á string.
 		A classe string também provem métodos para converter os caracteres de uma string para letra maiuscula (uppercase) ou minuscula (lowercase).
