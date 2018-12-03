@@ -250,6 +250,16 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 		Propriedades de String:		
 
+		Math: Fornece constantes e metodos estáticos para funções matemáticas comuns, como trigonometria, logaritmia, raiz quadrada, etc.
+
+		ex: public class math
+
+		https://docs.microsoft.com/pt-br/dotnet/api/system.math?view=netframework-4.7.2
+
+		http://www.macoratti.net/13/03/c_mat1.htm
+
+		https://www.geeksforgeeks.org/c-math-class/
+
 
 	Encapsulamento: Separação de códigos. Deixamos a variável privada e utilizar metodos para acessa-la, deixando-a mais isolada possivel do usuário. Ou seja, encapsular significa ocultar informações, definindo que cada objeto, contém todos os detalhes de implementação necessários sobre como ele funciona e oculta os detalhes internos sobre como ele executa os serviços.	
 
