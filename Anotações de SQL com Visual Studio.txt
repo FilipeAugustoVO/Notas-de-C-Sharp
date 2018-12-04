@@ -1,0 +1,13 @@
+Anotações de SQL com Visual Studio
+
+Tutorial de como criar uma database no Visual Studio:
+https://docs.microsoft.com/en-us/visualstudio/data-tools/create-a-sql-database-by-using-a-designer?view=vs-2017
+
+Ferramentas:
+
+Server Explorer: Contém os servidores atuais e permite criar novos.
+
+SQL Server Object Explorer: Mostra servidores, permite criar novos.
+
+Data Sources: 
+
