@@ -1,0 +1,141 @@
+Learning the Fundamentals of Programming with C# - Anotações
+
+Capitulo 1
+
+Definindo uma classe:
+
+- A definição mais simples de uma classe consiste da palavra-chave Class, seguido de seu nome. Por exemplo, Class HelloCSharp. O conteudo de uma classe está localizado em um bloco de linhas de programa, cercado por Chaves {}.
+
+Definindo o metodo Main():
+
+- O metodo Main() é o ponto inicial do nosso programa. Cada programa escrito em C# começa com um método Main() com o seguinte titulo (assinatura):
+
+static void Main (string[]) args)
+
+O metodo Main deve:
+	1. Ser declarado como mostrado acima.
+	2. Ser static e void.
+	3. Deve ter apenas um parâmetro do tipo array de string. No nosso exemplo o parâmetro é chamado de args, mas não é obrigatório.
+
+	Ele pode ser simplicado e parecer assim:
+
+	static void Main()
+
+	No metodo Main() podemos escrever uma sequencia aleatória de expressões e elas vão ser executadas na ordem designada á elas.
+
+C# distingue entre minisculas e maiusculas!
+
+Main Formatting Rules
+	If we want our code to be correctly formatted, we must follow several
+	important rules regarding indentation:
+	- Methods are indented inside the definition of the class (move to the
+	right by one or more [Tab] characters);
+	- Method contents are indented inside the definition of the method;
+	- The opening curly bracket { must be on its own line and placed exactly
+	under the method or class it refers to;
+	- The closing curly bracket } must be on its own line, placed exactly
+	vertically under the respective opening bracket (with the same
+	indentation);
+	- All class names must start with a capital letter;
+	- Variable names must begin with a lower-case letter;
+	- Method names must start with a capital letter;
+	Code indentation follows a very simple rule: when some piece of code is
+	logically inside another piece of code, it is indented (moved) on the right with
+	a single [Tab]. For example if a method is defined inside a class, it is indented
+	(moved to the right). In the same way if a method body is inside a method, it
+	is indented. To simplify this, we can assume that when we have the character
+	“{“, all the code after it until its closing “}” should be indented on the right
+
+Nomes de Arquivo = Nomes de Classe.
+
+
+Palavras-Chave:
+
+	abstract
+	as
+	base
+	bool
+	break
+	byte
+	case
+	catch
+	char
+	checked
+	class
+	const
+	continue
+	decimal
+	default
+	delegate
+	do
+	double
+	else
+	enum
+	event
+	explicit
+	extern
+	false
+	finally
+	fixed
+	float
+	for
+	foreach
+	goto
+	if
+	implicit
+	in
+	int
+	interface
+	internal
+	is
+	lock
+	long
+	namespace
+	new
+	null
+	object
+	operator
+	override
+	params
+	private
+	protected
+	public
+	readonly
+	ref
+	return	
+	sbyte
+	sealed
+	short
+	this
+	stackalloc
+	static
+	string
+	struct
+	switch
+	this
+	throw
+	true
+	try
+	typeof
+	uint
+	ulong
+	unchecked
+	unsafe
+	ushort
+	using
+	virtual
+	void
+	vollatile
+	while
+
+Os elementos de programa principais em C#, que são definidos e usados com ajuda de palavras-chaves, são:
+
+	1. Classes
+	2. Metodos
+	3. Operadores
+	4. Expressões
+	5. Operadores Condicionais
+	6. Laços
+	7. Tipos de Dados
+	8. Exceções
+	e alguns outros.
