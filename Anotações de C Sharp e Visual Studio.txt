@@ -275,6 +275,13 @@ Classes: Estrutura que define um determinado conjunto de objetos que possuem car
 
 		https://www.geeksforgeeks.org/c-math-class/
 
+		https://www.quora.com/How-do-I-calculate-the-square-root-of-a-number-in-C-using-system-math
+
+			Metodos:
+
+			Sqrt(Double): Raiz Quadrada.
+				ex: public static double Sqrt (double d); onde double d é o numero cuja raiz quadrada deve ser encontrada
+
 
 	Encapsulamento: Separação de códigos. Deixamos a variável privada e utilizar metodos para acessa-la, deixando-a mais isolada possivel do usuário. Ou seja, encapsular significa ocultar informações, definindo que cada objeto, contém todos os detalhes de implementação necessários sobre como ele funciona e oculta os detalhes internos sobre como ele executa os serviços.	
 
@@ -721,6 +728,16 @@ Palavras-Chave:
 	base: Palavra-chave usada em construtores (em inicializadores de construtor). Um construtor de classe derivada é necessário para chamnar o construtor de sua classe base.
 
 		https://www.dotnetperls.com/base
+
+Objetos:
+
+	Objetos de Sistema:
+
+		System.Console:
+
+			Metodos:
+
+				WriteLine(): Printa/Imprime uma mensagem no output padrão (o console). Por exemplo, "Hello C#!"		
 
 Programação Orientada a Objetos (OOP):
 	https://ericlemes.com/2009/03/03/dotnet-oop/	

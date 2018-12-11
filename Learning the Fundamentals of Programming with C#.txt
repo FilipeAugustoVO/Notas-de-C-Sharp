@@ -209,14 +209,19 @@ Exercicios:
 
 
 9. Write a program that prints the square root of 12345.
+	Fiz, ver projeto RaizQuadrada.
 10. Write a program that prints the first 100 members of the sequence 2, -3, 4, -5, 6, -7, 8.
+	2, -3, 4, -5
+
 11. Write a program that reads your age from the console and prints your age after 10 years.
 12. Describe the difference between C# and the .NET Framework.
 	C# is the programming language, created for .NET Framework, while .NET is the API.
 
 13. Make a list of the most popular programming languages. How are they different from C#?
 	Java: Similar to C#, shares its OOP paradigm.
-	PHP: OOP
+	PHP: OOP, often used for bad code.
 
 14. Decompile the example program from exercise 5.
+
+
 Solutions
