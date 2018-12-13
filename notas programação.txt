@@ -71,3 +71,7 @@ https://forum.unity.com/threads/solved-unnecessary-the-variable-is-assigned-but-
 
 Microsoft.DiaSymReader.Native:
 Instala-lo pelo NuGet.
+
+
+Como fazer matemática com C Sharp:
+https://www.sanfoundry.com/csharp-programming-examples-on-mathematics/

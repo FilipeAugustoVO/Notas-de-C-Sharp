@@ -739,6 +739,23 @@ Objetos:
 
 				WriteLine(): Printa/Imprime uma mensagem no output padrão (o console). Por exemplo, "Hello C#!"		
 
+Operadores:
+
+	Modulo/Modulus ou %: Esse operador obtem um resto de divisão. Ele permite executar código uma vez á várias iterações de laço - por exemplo, de duas em duas iterações. Ela usa o sinal de porcentagem.
+		https://www.dotnetperls.com/modulo
+
+		ex: 1000 % 90. Isso quer dizer "Quando 1000 é divido por 90, o resto é 10"
+
+	? ou Condicional Ternaria: Retorna um ou dois valores dependendo do valor de expressão booleana.
+	
+	Ex:
+	int val = i % 2 == 1 ? i * -1 : i;
+                Console.WriteLine(val);
+                // integral val igual i divido por 2, resto é igual 1, condição se i multiplocado por - 1 ou condição é igual i; 
+                // pergunta pro programa se o resto da conta é igual um, e ai se i é i multiplocado por -1 ou se i é i
+
+		Link: https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/operators/conditional-operator	
+
 Programação Orientada a Objetos (OOP):
 	https://ericlemes.com/2009/03/03/dotnet-oop/	
 
