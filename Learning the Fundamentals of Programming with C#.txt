@@ -241,6 +241,8 @@ Exercicios:
 
 
 11. Write a program that reads your age from the console and prints your age after 10 years.
+
+
 12. Describe the difference between C# and the .NET Framework.
 	C# is the programming language, created for .NET Framework, while .NET is the API.
 
@@ -249,6 +251,7 @@ Exercicios:
 	PHP: OOP, often used for bad code.
 
 14. Decompile the example program from exercise 5.
+	Descompilei usando ILSPY
 
 
 Solutions

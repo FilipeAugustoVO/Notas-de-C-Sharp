@@ -10,6 +10,74 @@ Notas importantes:
 - Estudar Sobrecarga de métodos e Polimorfismo.
 - Propriedades Auto-Implementadas vs Métodos Construtores: Os metodos construtores são necessários
 
+- Compilar e descompilar:
+
+	Compilar é o ato de transformar (ou traduzir) um programa feito em linguagem que o ser humana entenda (ex. Clipper, Cobol, Basic,etc) para uma linguagem em binário que só computadores entende.
+	O programa feito pelo programador ,diz-se linguagem de alto nível(ou código fonte) é transladada para uma linguagem de baixo nível (código objeto). Então, compilar é passar um programa escrito em linguagem que o ser humano entenda para uma linguagem usada pelo computador. 
+
+	Descompilar é exatamente o contrário. Passar da linguagem de máquina (código objeto) para a linguagem de alto nível (código fonte). 
+
+	Para descompilar, usamos programas próprios. Por exemplo, ILSPY.
+
+		http://www.macoratti.net/15/04/net_msil1.htm
+
+
+Console:
+
+
+
+	Métodos de Console:
+
+		- Console.Read: Lê o próximo caractere na string e o retorna como um integral de código de caractere.
+		- Console.ReadLine(): Esse método lê a linha escrita no console pelo usuário. Ele lê até o fim da linha, retorno ou o fim da string de entrada, e ele retorna tudo o que ele leu como uma nova string. Ou seja, digitamos, e o programa lê o que foi escrito.
+			Ex:
+			    {
+	       		Console.WriteLine("Say hello!");
+
+		        string response = Console.ReadLine();
+
+		        Console.WriteLine("You said: " + response);
+	   		    }
+
+	   		    Outro exemplo: 
+
+	   		    {
+		        Console.WriteLine("Hi, what is your name?");
+
+		        string name = "";
+				
+				name = Console.ReadLine();
+
+		        Console.WriteLine("Hi, " + name);
+   				}
+
+   				O que acontece ai: 
+   				1. O console escreve a linha "Hi, what is your name?" que diz oi e pergunta meu nome.
+   				2. Ele define a string name, no caso, como "" (vazia/espaço)
+   				3. name é instânciado como igual á Console.ReadLine(); 
+   				4. Ou seja, name/nome é igual á linha lida pelo Console após a mensagem de inicio.
+   				5. Após digitar o nome, o console escreve "Oi, (nome)", onde nome é a linha que foi escrita no console pelo usuário.
+
+	   	- Console.ReadKey: Lê o próximo caractere na string e retorna-o como uma instância de ConsoleKeyInfo que provem informação adicional sobre o botão que foi apertado, e o estado de botões modificadores (Shift, Alt, etc)	    
+
+		- Console.Write(string): Escreve na tela qualquer argumento de string que for passado. Console.Write permite mais controle sobre como a saida do console deve ser escrita.
+		- Console.WriteLine(string): Mesma coisa de Write, mas WriteLine também escreve um terminador de linha após cada chamada. Por exemplo, podemos chama-lo multiplas vezes e escrever "essa é a primeira linha", "essa é a segunda linha", essa é a terceira linha" multiplas vezes, e após cada mensagem, ele terminaria uma linha e começaria outra.
+
+			Propriedades:
+
+				Enviroment.NewLine: Cria uma nova linha, sendo a mesma coisa que uma indentação \n. É a prática recomendada no console.
+				Ex:
+					Console.Write(Environment.NewLine); 
+
+					{
+						Console.Write("Hello");
+						Console.Write(" ");
+						Console.Write("World");	
+						Console.Write(Environment.NewLine);
+					}
+
+		Tutorial sobre como usar o console: https://dotnetcademy.net/Learn/2032/Pages/2		
+
 
 
 Delegates: Um delegate é um tipo de referência que pode ser usado para encapsular um metodo nomeado ou anonimo. São similar em função aos pointers de C++; porém, são type-safe e seguros. São a base dos Eventos (ver abaixo). Pode ser instanciado associando-o com um metodo nomeado ou anonimo. Deve ser instanciado com um metodo ou expressão lamba (???) que tem um tipo compativo de retorno e parametros de input.
