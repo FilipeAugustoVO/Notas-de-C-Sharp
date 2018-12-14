@@ -255,3 +255,76 @@ Exercicios:
 
 
 Solutions
+
+
+
+Capitulo 2: Tipos Primitivos e Variaveis
+Fala sobre:
+	- Tipos de dados
+	- Variaveis
+	- Tipos de valor
+	- Tipos de referência
+	- Literais
+
+	O que é uma variável: 
+		Valores em um programa que mudam durante sua execução.
+
+	Tipos de Dados:
+		Tipos de Dados (Data Types) são conjuntos (gamas) de valores que tem caracteristicas similares. 
+			Por exemplo, tipo byte especifica um conjunto de integrais na gama de [0... 255]
+
+			Caracteristicas:
+
+			Tipos de dados são caracterizados por:
+				- Nome - por exemplo, int.
+				- Tamanho (how much memory they use) - por exemplo, 4 bytes.
+				- Valor padrão - por exemplo, 0.
+
+
+			Tipos:
+				Tipos básicos de dados em C# são dividos nos seguintes tipos:
+				- Tipos integral - sbyte, byte, short, ushort, int, uint, long, ulong;
+				- Tipo de virgula ou ponto flutuante - float, double.
+				- Tipo real com precisão decimal - decimal.
+				- Tipo Booleano - bool;
+				- Tipo de caractere - char;
+				- String - string.
+				- Tipo de objeto - object.
+
+			Esses tipos de dados são chamados de primitivos (tipos embutidos ou incorporados, ou built-in), porque eles estão incorporados no nivel mais baixo da linguagem C#. Abaixo temos uma representação dos tipos de dado mencionados acima, seu alcance e valores padrões:
+				Tipo de Dados  Valor Padrão    Valor Minimo  				Valor Máximo
+				sbyte             	0          	  -128      					 127												
+				byte               	0             	 0           				255								
+				short				0             -32768         				32767		
+				ushort              0               0            				65535			
+				int                 0          -2147483648   				2147483647
+				uint                0u				0	    			 	4294967295
+				long                0L		-9223372036854775808		  9223372036854775807
+				ulong               0u              0                    18446744073709551615
+				float              0.0f        ±1.5×10-45                     ±3.4×1038
+                double             0.0d        ±5.0×10-324                    ±1.7×10308
+                decimal            0.0m        ±1.0×10-28                     ±7.9×1028
+                bool               false    Dois valores possiveis: true and false (verdadeiro ou falso)
+                char             '\u0000'       '\u0000'                      '\uffff'
+                object             null (nulo)      -                             -
+                string             null (nulo)      -                             -		
+
+
+
+    Correspondência entre tipos C# e .NET:
+    	Tipos de dados primitivos em C# tem uma correspondência direta com os tipos do Common Type System(CTS) no .NET Framework. Por exemplo, tipo int em C# corresponde ao tipo System.Int32 no CTS e ao Tipo Integral na linguagem VB.NET, enquanto o tipo Long em C# corresponde ao tipo System.Int64 em CTS e ao tipo Long na linguagem VB.NET. Devido aos Sistemas de Tipo Comum/Common Type System(CTS) no .NET Framework há compatibilidade entre linguagens de programação diferentes (por exemplo, C#, managed C++, VB.NET e F#). Pela mesma razão os tipos int, int32 e System.Int32 em C# são na verdade aliases diferentes para um único e mesmo tipo de data - signed 32-bit integer (ou integral de 32 bits com sinal. Ou seja, pode ter sinal de mais ou menos)
+
+
+    	Tipos de Integral:
+    		Tipos de Integral representam números integrais e são sbyte, byte, short, ushort, int, uint, long e ulong. Vamos examinar cada um deles:
+
+    			O tipo sbyte é um integral de 8-bits com sinal. Isso quer dizer que o número de valores possiveis para ele é 2 elevado á 8, por exemplo, 256 valores no total, e eles podem ser ambos positivos ou negativos. O valor minimo que pode ser guardado no sbyte é Sbyte.MinValue = -128 (-2 elevado por 7) e o valor máximo é Sbyte.MaxValue = 127 (2 elevado à 7 - 1). O valor padrão é o numero 0.
+
+    			O tipo byte é um integral de 8-bits sem sinal. Ele também tem 256 valores de integrais diferentes (2 elevado por 8) que só podem ser não-negativos. Seu valor padrão é o numero 0. O valor minimo tomado é Byte.MinValue = 0, e o valor máximo é Byte.MaxValue = 255(2 elevado à 8 - 1)
+
+    			O tipo short é um integral de 16-bits com sinal. Seu valor minimo é INt16.MinValue = -32768 (-2 elevado á 15), e o máximo é Int16.MaxValue = 32767 (2 elevado á 15 - 1). O valor padrão para o tipo short é 0.
+
+    			O tipo ushort é um integral de 16-bits sem sinal. O valor minimo que ele pode guardar é UInt16.MinValue = 0, e o valor máximo é - UInt16.MaxValue = 65535 ( 2 elevado a 16 - 1). Seu valor padrão é o numero 0.
+
+    			O tipo int é um integral de 32-bits com sinal. Como podemos perceber, o crescimento do numero de bits aumenta o numero de valores possiveis que o tipo pode guardar.	            
+
