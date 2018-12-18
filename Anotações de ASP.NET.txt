@@ -1,0 +1,190 @@
+Anotações de ASP.NET
+
+http://www.semeru.com.br/blog/criando-um-endpoint-rest-com-asp-net-core/
+
+Conceitos Teóricos Básicos:
+
+1. Web Services
+	http://www.semeru.com.br/blog/web-services/
+
+	Um Serviço é nada mais que uma aplicação interoperavel* hospedada e acessada através da web através do protocolo HTTP por meio de um browser ou de diferentes tipos de clientes, como outras aplicações ou serviços. Deixando um pouco mais claro quando você cria um website em PHP a saída padrão é HTML e seu alvo é o browser e por extensão nós podemos visualizar a página no browser. Um web service não é direcionado para humanos e sim para outros programas.
+
+	O World Wide Web Consortium (W3C) define os web services como: aplicações cliente servidor que se comunicam pela World Wide Web’s (WWW) através do protocolo HTTP (HyperText Transfer Protocol) possibilitando a interoperabilidade entre softwares e aplicações executando em uma grande variedade de plataformas e frameworks. Caracterizam-se por sua grande interoperabilidade e extensibilidade podendo ser combinados de forma baixamente acoplada para executarem operações complexas. Programas proveem simples serviços que podem interagir uns com os outros gerando soluções sofisticadas.
+Os serviços podem ser divididos em 2 grupos mais comumente conhecidos e usados, são eles:
+eles:
+
+
+●	REST (Representational State Transfer)
+
+
+●	SOAP (Simple Object Access Protocol)
+
+
+REST
+
+
+●	JAX-RS 2.0 especificação que suporta a implementação para os serviços baseados RESTful no mundo Java.
+●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, Spring MVC, JBoss RestEasy, Oracle Jersey (2.x) e Glassfish Jersey (2.x).
+
+
+SOAP
+
+
+●	JAX-WS 2.0 especificação que suporta a implementação para os serviços baseados em SOAP no mundo Java.
+●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, JAX-WS, Apache Axis2 e Oracle WebLogic.
+
+
+O diagrama abaixo representa bem essa “divisão” entre os 2 principais tipos de serviços.
+
+	*Interoperablidade é a capacidade de um sistema de se comunicar de forma transparente com outro sistema (semelhante ou não). Pra ser considerado interoperavel, ele deve trabalhar com padrões abertos ou ontologias
+
+
+
+	RESTful Web Services:
+		http://www.semeru.com.br/blog/restful-web-services/
+
+		 No mundo REST, você pode acessar tudo como um recurso e eles possuem um identificador único a URI(Uniform Resource Identifier). Um servidor REST e seus clientes interagem usando o protocolo HTTP e seus quatro verbos mais conhecidos que são:
+
+		 	POST – CREATE/para inserir recurso
+
+		 		HTTP POST é frequentemente usado para criar novos recursos - inserir um novo item na base. Em uma aplicação REST perfeita quando uma operação é executada com sucesso, retorna-se o idempotente* portanto seu uso não é recomendado quando se precisa desse tipo de comportamento em uma requisição. Fazendo duas requisições POST idênticas o resultado mais comum será duas respostas iguais com a mesma informação mas ocasionalmente essa resposta pode mudar.
+
+		 		*Propriedade que algumas operações tem de poderem serem aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial. Ex: 0 e 1 na multiplicação, podem ser aplicadas em varias vezes e várias posições, e o valor é sempre o mesmo: Multiplicação por 0 = 0, multiplicação por 1 = número multiplicador.
+
+
+		 	GET – READ/para selecionar/recuperar um recurso
+
+
+				O verbo HTTP GET é usado para ler ou recuperar uma representação de um recurso. Em um “cenário feliz”, uma requisição GET retorna uma representação em XML* ou JSON** e um HTTP status code 200 (OK). Em um cenário de erro o retorno mais comum é 404 (NOT FOUND) ou 400 (BAD REQUEST).
+
+				De acordo com o design da especificação HTTP, o verbo GET (juntamente com o HEAD) é usado apenas para ler informações e não para alterá-la. Portanto quando usado dessa maneira é considerado seguro. Ou seja, ou seja eles podem ser invocados sem risco de perda ou corrupção de dados — chamando uma vez tem o mesmo efeito de chamá-lo 10 vezes, ou nenhuma. Além disso, o verbo GET (e HEAD) é idempotente, o que significa que se fizermos múltiplas requisições teremos sempre o mesmo resultado.
+				Você nunca deveria expor operações inseguras via GET — ele nunca deve ser usado para modificar informações no servidor.
+
+					* eXtensible Markup Language (XML). É uma linguagem de marcação (um sistema para anotar um documento de um jeito que seja dinstinguivel de um texto comum), similar ao HTML. XML foi designado para guardar e transportar dados e ser auto-descritiva. Ela tem um formato que é legivel tanto por humanos quanto máquinas.
+
+					** JavaScript Object Notation (JSON). É uma notação (uma forma de escrever) objetos em Javascript. Pode ser visto como um formato "universal" que é muito conveniente para troca de informações entre aplicações através de diversos protocolos. "Join" é um verbo em inglês que tem vários significados, relacionados a junção, junta, acumulação etc. O significado específico depende do contexto. Sem um contexto objetivo, a pergunta fica ampla demais. 
+						Ele é similar ao XML, tem a mesma utilidade, mesmo intuito, porém é mais leve, mas apesar do nome, ele não é necessariamente usado com Javascript. Muitas linguagens dão suporte ao JSON, é meio que um método que substitui o XML. Muito usado pra retornar dados vindos de um servidor utilizando requisições AJAX.
+
+
+
+			PUT – UPDATE/para modificar um recurso
+
+
+				O verbo PUT é comumente usado para atualizar informações, colocando um recurso conhecido no (body) corpo da requisição contendo novas informações que representam o recurso original.
+
+				Entretanto, o verbo PUT também pode ser usado para criar um recurso caso o ID do mesmo seja definido pelo cliente ao invés do servidor. Em outras palavras se o verbo PUT é proveniente de uma URI* que não contenha um recurso com um ID preexistente. Nesse caso o corpo da requisição contém a representação de um recurso. Para muitos isso pode parecer complicado e confuso. Conseqüentemente, este verbo deve ser usado com moderação para a criação de um novo recurso.
+				Uma alternativa para isso é utilizar o verbo POST para criar novos recursos com o ID definido pelo cliente setado no corpo da requisição — caso não tenha o ID definido para o recurso deve-se usar o verbo POST(confira acima).
+
+				Um update bem sucedido, retorna um status code 200 (ou 204 quando não retorna nenhum conteúdo no body. Se estiver usando o verbo PUT para criar um novo recurso, o retorno deve ser um status code 201 em caso de uma criação bem sucedida. O response body é opcional — lembrando que quando ele é exposto há um consumo maior de banda. Caso o cliente seja o responsável por definir o ID do recurso não é necessário retornar um link para o mesmo via location header.
+				O verbo PUT não é uma operação segura, na medida em que modifica(ou cria) um recurso no servidor, mas ele é idempotente. Em outras palavras, se você cria ou atualiza um recurso usando o verbo PUT e executa a mesma operação de novo, o recurso terá o mesmo estado que na primeira execução.
+				Se, por exemplo, você fizer uma requisição PUT para um recurso que incrementa um contador dentro de um recurso, a requisição perde o comportamento de idempotente. As vezes isso acontece sendo suficiente apenas documentar a requisição como não idempotente. Entretanto, o recomendado para requisições PUT é implementar apenas requisições idempotentes. Sendo assim é fortemente recomendado o uso do verbo POST para operações não idempotentes.
+
+					*Uniform Resource Identifier (URI). É uma string de caracteres que não-ambiguamente identifica um recurso particular. Para garantir uniformidade, todas URIs seguem uma série de regras de sintaxe, mas também mantém extensibilidade¹ por um esquema de nomeação hierarquica separado (ex: 'http://'). 
+						Essa identificação permite interação com representações de um recurso por uma rede; tipicamente a World Wide Web, usando protocolos especificos. Esquemas especificando uma sintaxe concreta e protocolos associados definem cada URI. A forma mais comum de URI é o Uniform Resource Locator (URL), frequentemente referido como endereço web. Mais raro de se ver é o Uniform Resource Name (URN), que foi designado para complementar URLs provendo um mecanismo para a identificação de recursos em namespaces particulares.
+
+						Detalhes:
+						https://webmasters.stackexchange.com/questions/19101/what-is-the-difference-between-a-uri-and-a-url
+
+						https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn
+
+						¹Extensibilidade é um principio de engenharia de software e e design de sistemas onde a implementação toma crescimento futuro em mente. Ou seja, a Extensibilidade prevê que o sistema crescerá futuramente, e garantirá que o atual sistema tem essa capacidade.
+
+
+
+			DELETE – DELETE/para remover um recurso
+
+
+				O verbo DELETE é fácil de entender, ele é usado para deletar um recurso identificado por uma URI.
+				Em uma deleção bem sucedida retorna-se um status code 200 (OK) juntamente com um response body, possivelmente uma representação do item deletado (o que acaba por demandar muita banda), ou uma response customizada. Ou retornar o status code 204 (NO CONTENT) sem response body. Em outras palavras, um status code 204 sem corpo, ou JSEND-style* response com um status code 200 são as responses mais recomendadas.
+				As operações de DELETE são idempotentes. Se você deleta um recurso, ele é removido sendo impossível repetir a operação uma vez que o recurso não existe mais. Se você utilizar o verbo DELETE para decrementar um contador (dentro de um recurso), sua operação DELETE não será mais idempotente. Como dito anteriormente, estatísticas de uso e métricas podem ser atualizadas enquanto o serviço é considerado idempotente e as informações do recursos permanecem inalteradas. É recomendado o uso do verbo POST para operações não idempotentes.
+				Existe uma recomendação quanto a idempotência do DELETE entretanto repetir uma requisição de DELETE em um recurso, normalmente, retorna um status code 404 (NOT FOUND) uma vez que já foi removido e, portanto, não existe mais. Para muitos uma operação de DELETE não é idempotente, entretanto, o resultado final do recurso é o mesmo. Retornar um status code 404 é aceitável e comunica com precisão o status da requisição.
+
+					*JSEND é uma especificação que define algumas regras para como respostas JSON de servidores web devem ser formatadas. JSEND foca no envio de mensagem no nivel de aplicação (em oposição ao nivel de protocolo ou transporte) que o torna ideal para uso aplicação ao estilo REST e APIs. É uma especie de padrão unificado para todos os desenvolvedores que usam JSON tenham um padrão único de comunicar dados para os servidores.
+
+						Detalhes:
+						https://labs.omniti.com/labs/jsend
+
+
+		Como podemos perceber, esses quatro verbos nos permite traçar uma certa analogia entre os verbos HTTP e o SQL. Observando a tabela abaixo isto fica um pouco mais claro:
+
+		Ação 		SQL		 Verbos HTTP	
+		Create     Insert		POST 
+		Read 	   Select		GET
+		Update     Update       PUT
+		Delete     Delete      DELETE
+
+		Além dos verbos mencionados anteriormente temos outros menos usados.
+
+
+		HEAD – O verbo HEAD possui uma funcionalidade similar ao verbo GET, exceto pelo fato do servidor retornar uma response line e headers, mas sem um entity-body.
+		TRACE – O verbo TRACE é usado para recuperar o conteúdo de uma requisição HTTP de volta podendo ser usado com o propósito de debug durante o processo de desenvolvimento.
+		OPTIONS – O verbo OPTIONS é usado pelo cliente para encontrar operações HTTP e outras opções suportadas pelo servidor. O cliente pode especificar uma URL para o verbo OPTIONS ou um asterisco (*) para se referir a todo o servidor.
+		CONNECT – O verbo CONNECT é usado pelo cliente para estabelecer uma conexão de rede com um servidor via HTTP.
+		PATCH – O verbo PATCH pode ser usado para realizar updates parcias de um recurso. Por exemplo, quando você precisar alterar apenas um campo em um recurso, executar um POST com todo o objeto é pesado e acarreta em um maior consumo de banda. Levando isso em conta a primeira coisa que vem em mente é: “por que não usar o PATCH ao invés do PUT para realisar atualizações sempre?”. Simples o verbo PATCH pode ser um problema na medida em que não é idempotente. Além disso minimizar seu uso previne curupção de dados por “colisões” entre duas PATCH requests no mesmo recurso em um mesmo frame de tempo. Colisões entre multiplas PATCH requests são mais perigosas que colisõs entre PUT requests por que exige que o cliente tenha informações básicas do recurso ou irão corrompê-lo.
+
+
+Formatos Suportados em Web Services RESTful
+
+
+	●	XML
+	●	JSON
+	●	CSV
+	●	Texto
+	●	Imagens
+	●	HTML
+	●	PDF
+	●	binário
+	●	etc
+
+
+Códigos de status (HTTP Status Codes) em serviços REST
+
+	http://www.semeru.com.br/blog/http-status-codes-em-servicos-rest/
+
+	Uma boa prática ao se desenvolver serviços REST é retornar status codes adequados a cada operação executada. Isso tem uma importância ainda maior quando se trata de uma exceção, uma vez que diferentementemente de um serviço SOAP* uma aplicação verdadeiramente REST não retorna a exception para o usuário. Sendo assim é fortemente recomendado que ao se desenvolver uma API REST se vá além dos status code 200 e 500 OK e falha respectivamente.
+
+
+		200 OK – Request de criação ou deleção executada com sucesso.
+
+
+		201 Created – Criação de uma fila, topico, fila temporária, tópico temporária, session, producer, consumer, listener, queue browser ou menssagem realizada com sucesso.
+
+
+		204 No Content – deleção de uma fila, tópico, sessão, producer ou listener bem sucedida mas sem retorno de conteúdo.
+
+
+		400 Bad Request – O path informado está em umformato incorreto, um parametro ou valor do corpo da requisição não está formatado corretamente ou um parâmetro onbrigatório não foi informado,
+		ou está formatado corretamente mas pode estar eventualmente inválido (por exemplo, o ID informado não exite – NullPointerException, o conteúdo retornado é muito grande ou o ID informado já está em uso).
+
+
+		403 Forbidden – O cliente não tem permissão para executar requisições na operação em questão.
+
+
+		404 Not Found – o objeto requisitado pelo path não existe(NullPointerException).
+
+
+		405 Method Not Allowed – O usuário não tem permissão de acesso ao path.
+
+
+		409 Conflict – Um objeto já foi criado com as mesmas informações.
+
+
+		500 Internal Server Error – Ocorreu uma falha no servidor, podendo ser desde uma falha no SQL por exemplo.
+
+		A prática de retornar os status code corretos torna seus serviços mais amigáveis ao cliente facilitando a integração com outros sistemas. Nos próximos posts botaremos a mão na massa desenvolvendo a nossa propria API/Serviço REST.
+
+
+		Botando em prática
+
+
+		
+		*Simple Object Acess Protocol (SOAP). É um protocolo para trocas de informações estruturadas em uma plataforma decentralizada e distribuida (ou seja, é um sistema que interliga vários nós de processamento de que um processo de grande consumo seja executado no nó "mais disponivel", ou subdividido em vários nós). Ele se baseia em XML para o seu formato de mensagem, e normalmente baseia-se em outros protocolos da camada de aplicação.
+
+			https://pt.wikipedia.org/wiki/SOAP
+
+
+4.
+
+http://www.semeru.com.br/blog/criando-uma-simples-web-api-restful-em-net-core-2-0/
+
+http://www.semeru.com.br/blog/criando-um-endpoint-rest-com-asp-net-core/
