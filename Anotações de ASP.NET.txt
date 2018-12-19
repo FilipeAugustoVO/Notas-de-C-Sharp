@@ -10,37 +10,35 @@ Conceitos Teóricos Básicos:
 	Um Serviço é nada mais que uma aplicação interoperavel* hospedada e acessada através da web através do protocolo HTTP por meio de um browser ou de diferentes tipos de clientes, como outras aplicações ou serviços. Deixando um pouco mais claro quando você cria um website em PHP a saída padrão é HTML e seu alvo é o browser e por extensão nós podemos visualizar a página no browser. Um web service não é direcionado para humanos e sim para outros programas.
 
 	O World Wide Web Consortium (W3C) define os web services como: aplicações cliente servidor que se comunicam pela World Wide Web’s (WWW) através do protocolo HTTP (HyperText Transfer Protocol) possibilitando a interoperabilidade entre softwares e aplicações executando em uma grande variedade de plataformas e frameworks. Caracterizam-se por sua grande interoperabilidade e extensibilidade podendo ser combinados de forma baixamente acoplada para executarem operações complexas. Programas proveem simples serviços que podem interagir uns com os outros gerando soluções sofisticadas.
-Os serviços podem ser divididos em 2 grupos mais comumente conhecidos e usados, são eles:
-eles:
+	Os serviços podem ser divididos em 2 grupos mais comumente conhecidos e usados, são eles:
+
+		●	REST (Representational State Transfer)
 
 
-●	REST (Representational State Transfer)
+		●	SOAP (Simple Object Access Protocol)
 
 
-●	SOAP (Simple Object Access Protocol)
+		REST
 
 
-REST
+		●	JAX-RS 2.0 especificação que suporta a implementação para os serviços baseados RESTful no mundo Java.
+		●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, Spring MVC, JBoss RestEasy, Oracle Jersey (2.x) e Glassfish Jersey (2.x).
 
 
-●	JAX-RS 2.0 especificação que suporta a implementação para os serviços baseados RESTful no mundo Java.
-●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, Spring MVC, JBoss RestEasy, Oracle Jersey (2.x) e Glassfish Jersey (2.x).
+		SOAP
 
 
-SOAP
+		●	JAX-WS 2.0 especificação que suporta a implementação para os serviços baseados em SOAP no mundo Java.
+		●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, JAX-WS, Apache Axis2 e Oracle WebLogic.
 
 
-●	JAX-WS 2.0 especificação que suporta a implementação para os serviços baseados em SOAP no mundo Java.
-●	As principais implementações disponíveis para essa essa especificação são: Apache CXF, JAX-WS, Apache Axis2 e Oracle WebLogic.
-
-
-O diagrama abaixo representa bem essa “divisão” entre os 2 principais tipos de serviços.
+	O diagrama abaixo representa bem essa “divisão” entre os 2 principais tipos de serviços.
 
 	*Interoperablidade é a capacidade de um sistema de se comunicar de forma transparente com outro sistema (semelhante ou não). Pra ser considerado interoperavel, ele deve trabalhar com padrões abertos ou ontologias
 
 
 
-	RESTful Web Services:
+2. RESTful Web Services:
 		http://www.semeru.com.br/blog/restful-web-services/
 
 		 No mundo REST, você pode acessar tudo como um recurso e eles possuem um identificador único a URI(Uniform Resource Identifier). Um servidor REST e seus clientes interagem usando o protocolo HTTP e seus quatro verbos mais conhecidos que são:
@@ -123,64 +121,64 @@ O diagrama abaixo representa bem essa “divisão” entre os 2 principais tipos
 		PATCH – O verbo PATCH pode ser usado para realizar updates parcias de um recurso. Por exemplo, quando você precisar alterar apenas um campo em um recurso, executar um POST com todo o objeto é pesado e acarreta em um maior consumo de banda. Levando isso em conta a primeira coisa que vem em mente é: “por que não usar o PATCH ao invés do PUT para realisar atualizações sempre?”. Simples o verbo PATCH pode ser um problema na medida em que não é idempotente. Além disso minimizar seu uso previne curupção de dados por “colisões” entre duas PATCH requests no mesmo recurso em um mesmo frame de tempo. Colisões entre multiplas PATCH requests são mais perigosas que colisõs entre PUT requests por que exige que o cliente tenha informações básicas do recurso ou irão corrompê-lo.
 
 
-Formatos Suportados em Web Services RESTful
+		Formatos Suportados em Web Services RESTful
 
 
-	●	XML
-	●	JSON
-	●	CSV
-	●	Texto
-	●	Imagens
-	●	HTML
-	●	PDF
-	●	binário
-	●	etc
+			●	XML
+			●	JSON
+			●	CSV
+			●	Texto
+			●	Imagens
+			●	HTML
+			●	PDF
+			●	binário
+			●	etc
 
 
-Códigos de status (HTTP Status Codes) em serviços REST
+3.Códigos de status (HTTP Status Codes) em serviços REST
 
-	http://www.semeru.com.br/blog/http-status-codes-em-servicos-rest/
+		http://www.semeru.com.br/blog/http-status-codes-em-servicos-rest/
 
-	Uma boa prática ao se desenvolver serviços REST é retornar status codes adequados a cada operação executada. Isso tem uma importância ainda maior quando se trata de uma exceção, uma vez que diferentementemente de um serviço SOAP* uma aplicação verdadeiramente REST não retorna a exception para o usuário. Sendo assim é fortemente recomendado que ao se desenvolver uma API REST se vá além dos status code 200 e 500 OK e falha respectivamente.
-
-
-		200 OK – Request de criação ou deleção executada com sucesso.
+		Uma boa prática ao se desenvolver serviços REST é retornar status codes adequados a cada operação executada. Isso tem uma importância ainda maior quando se trata de uma exceção, uma vez que diferentementemente de um serviço SOAP* uma aplicação verdadeiramente REST não retorna a exception para o usuário. Sendo assim é fortemente recomendado que ao se desenvolver uma API REST se vá além dos status code 200 e 500 OK e falha respectivamente.
 
 
-		201 Created – Criação de uma fila, topico, fila temporária, tópico temporária, session, producer, consumer, listener, queue browser ou menssagem realizada com sucesso.
+			200 OK – Request de criação ou deleção executada com sucesso.
 
 
-		204 No Content – deleção de uma fila, tópico, sessão, producer ou listener bem sucedida mas sem retorno de conteúdo.
+			201 Created – Criação de uma fila, topico, fila temporária, tópico temporária, session, producer, consumer, listener, queue browser ou menssagem realizada com sucesso.
 
 
-		400 Bad Request – O path informado está em umformato incorreto, um parametro ou valor do corpo da requisição não está formatado corretamente ou um parâmetro onbrigatório não foi informado,
-		ou está formatado corretamente mas pode estar eventualmente inválido (por exemplo, o ID informado não exite – NullPointerException, o conteúdo retornado é muito grande ou o ID informado já está em uso).
+			204 No Content – deleção de uma fila, tópico, sessão, producer ou listener bem sucedida mas sem retorno de conteúdo.
 
 
-		403 Forbidden – O cliente não tem permissão para executar requisições na operação em questão.
+			400 Bad Request – O path informado está em umformato incorreto, um parametro ou valor do corpo da requisição não está formatado corretamente ou um parâmetro onbrigatório não foi informado,
+			ou está formatado corretamente mas pode estar eventualmente inválido (por exemplo, o ID informado não exite – NullPointerException, o conteúdo retornado é muito grande ou o ID informado já está em uso).
 
 
-		404 Not Found – o objeto requisitado pelo path não existe(NullPointerException).
+			403 Forbidden – O cliente não tem permissão para executar requisições na operação em questão.
 
 
-		405 Method Not Allowed – O usuário não tem permissão de acesso ao path.
+			404 Not Found – o objeto requisitado pelo path não existe(NullPointerException).
 
 
-		409 Conflict – Um objeto já foi criado com as mesmas informações.
+			405 Method Not Allowed – O usuário não tem permissão de acesso ao path.
 
 
-		500 Internal Server Error – Ocorreu uma falha no servidor, podendo ser desde uma falha no SQL por exemplo.
-
-		A prática de retornar os status code corretos torna seus serviços mais amigáveis ao cliente facilitando a integração com outros sistemas. Nos próximos posts botaremos a mão na massa desenvolvendo a nossa propria API/Serviço REST.
+			409 Conflict – Um objeto já foi criado com as mesmas informações.
 
 
-		Botando em prática
+			500 Internal Server Error – Ocorreu uma falha no servidor, podendo ser desde uma falha no SQL por exemplo.
+
+			A prática de retornar os status code corretos torna seus serviços mais amigáveis ao cliente facilitando a integração com outros sistemas. Nos próximos posts botaremos a mão na massa desenvolvendo a nossa propria API/Serviço REST.
 
 
-		
-		*Simple Object Acess Protocol (SOAP). É um protocolo para trocas de informações estruturadas em uma plataforma decentralizada e distribuida (ou seja, é um sistema que interliga vários nós de processamento de que um processo de grande consumo seja executado no nó "mais disponivel", ou subdividido em vários nós). Ele se baseia em XML para o seu formato de mensagem, e normalmente baseia-se em outros protocolos da camada de aplicação.
+			Botando em prática
 
-			https://pt.wikipedia.org/wiki/SOAP
+
+			
+			*Simple Object Acess Protocol (SOAP). É um protocolo para trocas de informações estruturadas em uma plataforma decentralizada e distribuida (ou seja, é um sistema que interliga vários nós de processamento de que um processo de grande consumo seja executado no nó "mais disponivel", ou subdividido em vários nós). Ele se baseia em XML para o seu formato de mensagem, e normalmente baseia-se em outros protocolos da camada de aplicação.
+
+				https://pt.wikipedia.org/wiki/SOAP
 
 
 4.
@@ -188,3 +186,15 @@ Códigos de status (HTTP Status Codes) em serviços REST
 http://www.semeru.com.br/blog/criando-uma-simples-web-api-restful-em-net-core-2-0/
 
 http://www.semeru.com.br/blog/criando-um-endpoint-rest-com-asp-net-core/
+
+https://docs.microsoft.com/pt-br/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2017
+
+
+
+Notas:
+
+- A pasta wwwroot é a raiz do website.
+
+- A configuração padrão da aplicação é guardada em appsettings.json. Porém, é possivel fazer um override dessas configurações usando appsettings.Development.json.
+
+-
