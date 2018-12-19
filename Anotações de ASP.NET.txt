@@ -189,7 +189,7 @@ http://www.semeru.com.br/blog/criando-um-endpoint-rest-com-asp-net-core/
 
 https://docs.microsoft.com/pt-br/visualstudio/get-started/csharp/tutorial-aspnet-core?view=vs-2017
 
-
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/?view=aspnetcore-2.1
 
 Notas:
 
@@ -197,4 +197,26 @@ Notas:
 
 - A configuração padrão da aplicação é guardada em appsettings.json. Porém, é possivel fazer um override dessas configurações usando appsettings.Development.json.
 
--
+- Um "using" de livrarias cinza é desnecessário, remova-os se não for usa-los.
+
+
+	Enviroment.CurrentDirectory: exibe o atual diretório do projeto.
+
+
+- APIs. Application Programming Interface. É um intermediador de software que permite que duas aplicações falem umas com as outras.
+
+	https://dev.to/donbavand/aspnet-core-20-implementing-a-3rd-party-web-api-7p8
+
+	https://www.youtube.com/watch?v=lv43vrCo2fg&feature=youtu.be
+
+- Controllers: 
+
+	Scaffold:		
+
+- Atributo Route:	
+
+- Metodo Ping():
+
+- Services.AddMvc
+
+- IServiceCollection
